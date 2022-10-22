@@ -8,13 +8,10 @@ namespace Chess
 {
     internal class KnightPiece : Piece
     {
-        public KnightPiece(char ch) : base(ch) { }
-        public override void Draw(int cellX, int cellY, Graphics g)
+        public KnightPiece(char ch) : base(ch)
         {
-            Image img;
             if (color == Color.White) img = Properties.Resources.wN;
             else img = Properties.Resources.bN;
-            g.DrawImage(img, cellY * 100 + 5, cellX * 100 + 5);
         }
     }
 }

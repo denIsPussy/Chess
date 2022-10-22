@@ -40,7 +40,7 @@
             this.pictureBoxChess.Size = new System.Drawing.Size(800, 800);
             this.pictureBoxChess.TabIndex = 0;
             this.pictureBoxChess.TabStop = false;
-            this.pictureBoxChess.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBoxChess.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxChess_MouseClick);
             // 
             // FormChess
             // 

@@ -15,16 +15,16 @@ namespace Chess
         public const int boxHeight = 100;
         public Color brown = Color.FromArgb(207, 114, 58);
         public Color beige = Color.FromArgb(235, 204, 160);
-        public Piece[,] board =
+        public Cell[,] board =
         {
-            {new RookPiece('b'), new KnightPiece('b'), new BishopPiece('b'), new QueenPiece('b'), new KingPiece('b'), new BishopPiece('b'), new KnightPiece('b'), new RookPiece('b')},
-            {new PawnPiece('b'), new PawnPiece('b'), new PawnPiece('b'), new PawnPiece('b'), new PawnPiece('b'), new PawnPiece('b'), new PawnPiece('b'), new PawnPiece('b')},
-            {null, null, null, null, null, null, null, null},
-            {null, null, null, null, null, null, null, null},
-            {null, null, null, null, null, null, null, null},
-            {null, null, null, null, null, null, null, null},
-            {new PawnPiece('w'), new PawnPiece('w'), new PawnPiece('w'), new PawnPiece('w'), new PawnPiece('w'), new PawnPiece('w'), new PawnPiece('w'), new PawnPiece('w')},
-            {new RookPiece('w'), new KnightPiece('w'), new BishopPiece('w'), new KingPiece('w'), new QueenPiece('w'), new BishopPiece('w'), new KnightPiece('w'), new RookPiece('w')}
+            {new Cell(new RookPiece('b')), new Cell(new KnightPiece('b')), new Cell(new BishopPiece('b')), new Cell(new QueenPiece('b')), new Cell(new KingPiece('b')), new Cell(new BishopPiece('b')), new Cell(new KnightPiece('b')), new Cell(new RookPiece('b'))},
+            {new Cell(new PawnPiece('b')), new Cell(new PawnPiece('b')), new Cell(new PawnPiece('b')), new Cell(new PawnPiece('b')), new Cell(new PawnPiece('b')), new Cell(new PawnPiece('b')), new Cell(new PawnPiece('b')), new Cell(new PawnPiece('b'))},
+            {new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null)},
+            {new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null)},
+            {new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null)},
+            {new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null), new Cell(null)},
+            {new Cell(new PawnPiece('b')), new Cell(new PawnPiece('w')), new Cell(new PawnPiece('w')), new Cell(new PawnPiece('w')), new Cell(new PawnPiece('w')), new Cell(new PawnPiece('w')), new Cell(new PawnPiece('w')), new Cell(new PawnPiece('w'))},
+            {new Cell(new RookPiece('b')), new Cell(new KnightPiece('w')), new Cell(new BishopPiece('w')), new Cell(new KingPiece('w')), new Cell(new QueenPiece('w')), new Cell(new BishopPiece('w')), new Cell(new KnightPiece('w')), new Cell(new RookPiece('w'))}
         };
         //public void DrawningBoard(Graphics g)
         //{

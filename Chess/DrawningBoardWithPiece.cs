@@ -47,8 +47,12 @@ namespace Chess
             {
                 for (int j = 0; j < board.board.GetLength(1); j++)
                 {
-                    Piece piece = board.board[i, j];
-                    if (!(piece is null)) piece.Draw(i, j, g);
+                    Cell cell = board.board[i, j];
+                    if (!(cell.piece is null)) g.DrawImage(cell.piece.getImage(), j * 100 + 5, i * 100 + 5);
+                    if (cell.isSelected)
+                    {
+                        g.DrawRectangle(new Pen(Color.Green), j, i, 100, 100);
+                    }
                 }
             }
         }

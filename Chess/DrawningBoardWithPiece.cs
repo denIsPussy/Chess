@@ -19,9 +19,9 @@ namespace Chess
             int coordX = 0;
             int coordY = 0;
             Color clr;
-            for (int i = 0; i < board.board.GetLength(0); i++)
+            for (int i = 0; i < Board.board.GetLength(0); i++)
             {
-                for (int j = 0; j < board.board.GetLength(1); j++)
+                for (int j = 0; j < Board.board.GetLength(1); j++)
                 {
                     if (i % 2 == 0)
                     {
@@ -33,21 +33,21 @@ namespace Chess
                         if (j % 2 == 0) clr = board.brown;
                         else clr = board.beige;
                     }
-                    g.FillRectangle(new SolidBrush(clr), coordX, coordY, Board.boxWidth, Board.boxHeight);
-                    coordX += Board.boxWidth;
+                    g.FillRectangle(new SolidBrush(clr), coordX, coordY, board.boxWidth, board.boxHeight);
+                    coordX += board.boxWidth;
                 }
-                coordY += Board.boxHeight;
+                coordY += board.boxHeight;
                 coordX = 0;
             }
         }
         public void Drawning(Graphics g)
         {
             DrawningBoard(g);
-            for (int i = 0; i < board.board.GetLength(0); i++)
+            for (int i = 0; i < Board.board.GetLength(0); i++)
             {
-                for (int j = 0; j < board.board.GetLength(1); j++)
+                for (int j = 0; j < Board.board.GetLength(1); j++)
                 {
-                    Cell cell = board.board[i, j];
+                    Cell cell = Board.board[i, j];
                     if (!(cell.piece is null)) g.DrawImage(cell.piece.getImage(), cell.piece.cellY * 100 + 9, cell.piece.cellX * 100 + 5);
                     if (cell.isSelected)
                     {

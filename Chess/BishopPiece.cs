@@ -14,7 +14,7 @@ namespace Chess
             if (color == Color.White) return Properties.Resources.wB;
             else return Properties.Resources.bB;
         }
-        public override void ShowAvailableMoves(Board board)
+        public override void ShowAvailableMoves(Cell[,] board)
         {
         }
     }

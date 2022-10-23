@@ -26,7 +26,7 @@ namespace Chess
         {
             bmp = new(pictureBoxChess.Width, pictureBoxChess.Height);
             g = Graphics.FromImage(bmp);
-            board = new Board();
+            board = new Board(800, 800);
             Draw();
             timerChess.Enabled = true;
         }
@@ -44,7 +44,7 @@ namespace Chess
             int x = CursorX / 100;
             int y = CursorY / 100;
 
-            Cell cell = board.board[y, x];
+            Cell cell = Board.board[y, x];
 
             if (!SelectedBoxOnBoard())
             {
@@ -52,21 +52,25 @@ namespace Chess
             }
             else
             {
-                if (cell.isSelected) cell.Unselected(y, x);
-                else
+                if (cell.isSelected)
                 {
-                    var indexSelectedCell = getIndexSelectedCell();
-                    Cell selectedCell = board.board[indexSelectedCell.Item1, indexSelectedCell.Item2];
-                    if (selectedCell.piece is Piece && cell.piece == null)
-                    {
-                        selectedCell.piece.Move(y, x, board);
-                    }
-                    else
-                    {
-                        selectedCell.isSelected = false;
-                    }
-
+                    cell.Unselected(y, x);
                 }
+                //else
+                //{
+                //    var indexSelectedCell = getIndexSelectedCell();
+                //    Cell selectedCell = Board.board[indexSelectedCell.Item1, indexSelectedCell.Item2];
+                //    if (selectedCell.piece is Piece && cell.piece == null)
+                //    {
+                //        selectedCell.piece.Move(y, x, board);
+                //    }
+                //    else
+                //    {
+                //        selectedCell.isSelected = false;
+                //    }
+
+                //}
+
             }
             pictureBoxChess.Image = bmp;
         }
@@ -77,7 +81,7 @@ namespace Chess
         }
         private bool SelectedBoxOnBoard()
         {
-            foreach (Cell c in board.board)
+            foreach (Cell c in Board.board)
             {
                 if (c.isSelected) return true;
             }
@@ -85,11 +89,11 @@ namespace Chess
         }
         private (int x, int y) getIndexSelectedCell()
         {
-            for(int i = 0; i < board.board.GetLength(0); i++)
+            for(int i = 0; i < Board.board.GetLength(0); i++)
             {
-                for (int j = 0; j < board.board.GetLength(1); j++)
+                for (int j = 0; j < Board.board.GetLength(1); j++)
                 {
-                    Cell c = board.board[i, j];
+                    Cell c = Board.board[i, j];
                     if (c.isSelected) return (i, j);
                 }
             }

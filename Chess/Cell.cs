@@ -12,6 +12,7 @@ namespace Chess
         public const int cellWidth = 100;
         public const int cellHeight = 100;
         public bool isSelected = false;
+        public bool isAvailableMove = false;
 
         public Cell(Piece piece)
         {
@@ -20,10 +21,12 @@ namespace Chess
         public void Selected(int cellX, int cellY)
         {
             isSelected = true;
+            if (piece is not null) piece.ShowAvailableMoves(Board.board);
         }
         public void Unselected(int cellX, int cellY)
         {
             isSelected = false;
+            if (piece is not null) piece.HideAvailableMoves(Board.board);
         }
     }
 }

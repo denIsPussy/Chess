@@ -23,8 +23,8 @@ namespace Chess
         public virtual Image getImage() { return null; }
         public void Move(int newX, int newY, Board board)
         {
-            Cell oldCell = board.board[cellX, cellY];
-            Cell newCell = board.board[newX, newY];
+            Cell oldCell = Board.board[cellX, cellY];
+            Cell newCell = Board.board[newX, newY];
 
             newCell.piece = oldCell.piece;
             oldCell.piece = null;
@@ -35,6 +35,7 @@ namespace Chess
             newCell.piece.cellX = newX;
             newCell.piece.cellY = newY;
         }
-        public virtual void ShowAvailableMoves(Board board) { }
+        public virtual void ShowAvailableMoves(Cell[,] board) { }
+        public virtual void HideAvailableMoves(Cell[,] board) { }
     }
 }

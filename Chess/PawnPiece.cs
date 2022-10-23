@@ -15,9 +15,31 @@ namespace Chess
             if (color == Color.White) return Properties.Resources.wP;
             else return Properties.Resources.bP;
         }
-        public override void ShowAvailableMoves(Board board)
+        public override void ShowAvailableMoves(Cell[,] board)
         {
+            Cell currentPiece = board[cellX, cellY];
 
+            if (cellX - 1 >= 0 && cellY + 1 < 8) 
+            {
+                if (board[cellX - 1, cellY + 1].piece == null) board[cellX - 1, cellY + 1].isSelected = true;
+            }
+            if (cellX - 1 >= 0 && cellY - 1 >= 0)
+            {
+                if (board[cellX - 1, cellY - 1].piece == null) board[cellX - 1, cellY - 1].isSelected = true;
+            }
+        }
+        public override void HideAvailableMoves(Cell[,] board)
+        {
+            Cell currentPiece = board[cellX, cellY];
+
+            if (cellX - 1 >= 0 && cellY + 1 < 8)
+            {
+                if (board[cellX - 1, cellY + 1].piece == null) board[cellX - 1, cellY + 1].isSelected = false;
+            }
+            if (cellX - 1 >= 0 && cellY - 1 >= 0)
+            {
+                if (board[cellX - 1, cellY - 1].piece == null) board[cellX - 1, cellY - 1].isSelected = false;
+            }
         }
     }
 }

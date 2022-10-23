@@ -21,5 +21,9 @@ namespace Chess
         {
             isSelected = true;
         }
+        public void Unselected(int cellX, int cellY)
+        {
+            isSelected = false;
+        }
     }
 }

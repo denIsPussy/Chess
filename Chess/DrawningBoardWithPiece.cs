@@ -48,10 +48,10 @@ namespace Chess
                 for (int j = 0; j < board.board.GetLength(1); j++)
                 {
                     Cell cell = board.board[i, j];
-                    if (!(cell.piece is null)) g.DrawImage(cell.piece.getImage(), j * 100 + 5, i * 100 + 5);
+                    if (!(cell.piece is null)) g.DrawImage(cell.piece.getImage(), cell.piece.cellY * 100 + 9, cell.piece.cellX * 100 + 5);
                     if (cell.isSelected)
                     {
-                        g.DrawRectangle(new Pen(Color.Green), j, i, 100, 100);
+                        g.DrawRectangle(new Pen(Color.Green, 5), j * 100, i * 100, 100, 100);
                     }
                 }
             }

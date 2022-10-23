@@ -8,10 +8,11 @@ namespace Chess
 {
     internal class QueenPiece : Piece
     {
-        public QueenPiece(char ch) : base(ch)
+        public QueenPiece(char ch) : base(ch) { }
+        public override Image getImage()
         {
-            if (color == Color.White) img = Properties.Resources.wQ;
-            else img = Properties.Resources.bQ;
+            if (color == Color.White) return Properties.Resources.wQ;
+            else return Properties.Resources.bQ;
         }
     }
 }

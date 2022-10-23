@@ -8,10 +8,14 @@ namespace Chess
 {
     internal class BishopPiece : Piece
     {
-        public BishopPiece(char ch) : base(ch)
+        public BishopPiece(char ch) : base(ch) { }
+        public override Image getImage()
         {
-            if (color == Color.White) img = Properties.Resources.wB;
-            else img = Properties.Resources.bB;
+            if (color == Color.White) return Properties.Resources.wB;
+            else return Properties.Resources.bB;
+        }
+        public override void ShowAvailableMoves(Board board)
+        {
         }
     }
 }

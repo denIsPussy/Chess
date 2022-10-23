@@ -8,10 +8,11 @@ namespace Chess
 {
     internal class RookPiece : Piece
     {
-        public RookPiece(char ch) : base(ch)
+        public RookPiece(char ch) : base(ch) { }
+        public override Image getImage()
         {
-            if (color == Color.White) img = Properties.Resources.wR;
-            else img = Properties.Resources.bR;
+            if (color == Color.White) return Properties.Resources.wR;
+            else return Properties.Resources.bR;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Chess
             onTheBoard = true;
         }
         public virtual Image getImage() { return null; }
-        public void Move(int newX, int newY, Board board)
+        public void Move(int newX, int newY)
         {
             Cell oldCell = Board.board[cellX, cellY];
             Cell newCell = Board.board[newX, newY];

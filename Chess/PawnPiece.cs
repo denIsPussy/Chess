@@ -21,11 +21,11 @@ namespace Chess
 
             if (cellX - 1 >= 0 && cellY + 1 < 8) 
             {
-                if (board[cellX - 1, cellY + 1].piece == null) board[cellX - 1, cellY + 1].isSelected = true;
+                if (board[cellX - 1, cellY + 1].piece == null) board[cellX - 1, cellY + 1].isAvailableMove = true;
             }
             if (cellX - 1 >= 0 && cellY - 1 >= 0)
             {
-                if (board[cellX - 1, cellY - 1].piece == null) board[cellX - 1, cellY - 1].isSelected = true;
+                if (board[cellX - 1, cellY - 1].piece == null) board[cellX - 1, cellY - 1].isAvailableMove = true;
             }
         }
         public override void HideAvailableMoves(Cell[,] board)
@@ -34,11 +34,11 @@ namespace Chess
 
             if (cellX - 1 >= 0 && cellY + 1 < 8)
             {
-                if (board[cellX - 1, cellY + 1].piece == null) board[cellX - 1, cellY + 1].isSelected = false;
+                if (board[cellX - 1, cellY + 1].piece == null) board[cellX - 1, cellY + 1].isAvailableMove = false;
             }
             if (cellX - 1 >= 0 && cellY - 1 >= 0)
             {
-                if (board[cellX - 1, cellY - 1].piece == null) board[cellX - 1, cellY - 1].isSelected = false;
+                if (board[cellX - 1, cellY - 1].piece == null) board[cellX - 1, cellY - 1].isAvailableMove = false;
             }
         }
     }

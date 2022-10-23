@@ -18,12 +18,12 @@ namespace Chess
         {
             this.piece = piece;
         }
-        public void Selected(int cellX, int cellY)
+        public void Selected()
         {
             isSelected = true;
             if (piece is not null) piece.ShowAvailableMoves(Board.board);
         }
-        public void Unselected(int cellX, int cellY)
+        public void Unselected()
         {
             isSelected = false;
             if (piece is not null) piece.HideAvailableMoves(Board.board);

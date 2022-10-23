@@ -51,7 +51,11 @@ namespace Chess
                     if (!(cell.piece is null)) g.DrawImage(cell.piece.getImage(), cell.piece.cellY * 100 + 9, cell.piece.cellX * 100 + 5);
                     if (cell.isSelected)
                     {
-                        g.DrawRectangle(new Pen(Color.Green, 5), j * 100, i * 100, 100, 100);
+                        g.DrawRectangle(new Pen(Color.Green, 3), j * 100, i * 100, 100, 100);
+                    }
+                    if (cell.isAvailableMove)
+                    {
+                        g.DrawRectangle(new Pen(Color.Red, 3), j * 100, i * 100, 100, 100);
                     }
                 }
             }

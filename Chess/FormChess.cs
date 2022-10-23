@@ -48,13 +48,32 @@ namespace Chess
 
             if (!SelectedBoxOnBoard())
             {
-                if (!cell.isSelected) cell.Selected(y, x);
+                if (!cell.isSelected && cell.piece is not null) cell.Selected();
             }
             else
             {
                 if (cell.isSelected)
                 {
-                    cell.Unselected(y, x);
+                    cell.Unselected();
+                }
+                else
+                {
+                    var indexSelectedCell = getIndexSelectedCell();
+                    Cell selectedCell = Board.board[indexSelectedCell.Item1, indexSelectedCell.Item2];
+                    if (selectedCell.isSelected && cell.isAvailableMove)
+                    {
+                        selectedCell.Unselected();
+                        selectedCell.piece.Move(y, x);
+                    }
+                    else if (selectedCell.isSelected && cell.piece is not null)
+                    {
+                        selectedCell.Unselected();
+                        cell.Selected();
+                    }
+                    else
+                    {
+                        selectedCell.Unselected();
+                    }
                 }
                 //else
                 //{

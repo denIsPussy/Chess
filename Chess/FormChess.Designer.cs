@@ -39,6 +39,7 @@
             // 
             this.pictureBoxChess.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxChess.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxChess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxChess.Name = "pictureBoxChess";
             this.pictureBoxChess.Size = new System.Drawing.Size(800, 800);
             this.pictureBoxChess.TabIndex = 0;
@@ -52,18 +53,19 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(316, 337);
+            this.label1.Location = new System.Drawing.Point(276, 253);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 48);
+            this.label1.Size = new System.Drawing.Size(96, 36);
             this.label1.TabIndex = 1;
             // 
             // FormChess
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 800);
             this.Controls.Add(this.pictureBoxChess);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormChess";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChess)).EndInit();
